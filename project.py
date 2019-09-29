@@ -1,8 +1,9 @@
 #!/usr/bin/env python2
 import sys
 
-from flask import Flask, redirect, url_for, flash, render_template, jsonify
-from flask_login import login_required, logout_user
+from flask import Flask, redirect, url_for, \
+    flash, render_template, jsonify, request
+from flask_login import current_user, login_required, logout_user
 from config import Config
 from models import db, login_manager, User, Category, Item
 from oauth import blueprint
@@ -67,26 +68,6 @@ def index():
         items=items
     )
 
-# create new category
-@app.route("/category/new", methods=['GET', 'POST'])
-@login_required
-def newCategory():
-    return "TODO"
-
-
-# edit a category
-@app.route("/category/<int:category_id>/edit", methods=['GET', 'POST'])
-@login_required
-def editCategory(category_id):
-    return "TODO"
-
-
-# delete a category
-@app.route("/category/<int:category_id>/delete", methods=['GET', 'POST'])
-@login_required
-def deleteCategory(category_id):
-    return "TODO"
-
 
 # show items in a category
 @app.route("/category/<int:category_id>/")
@@ -120,10 +101,30 @@ def showItemDescription(category_id, item_id):
     )
 
 # create new item in category
-@app.route("/category/<int:category_id>/item/new", methods=['GET', 'POST'])
+@app.route("/category/item/new", methods=['GET', 'POST'])
 @login_required
-def newItem(category_id):
-    return "TODO"
+def newItem():
+    if request.method == 'POST':
+        category = db.session.query(Category)\
+                    .filter_by(id=request.form['category']).one()
+        new_item = Item(
+            item_name=request.form['item_name'],
+            item_desc=request.form['item_desc'],
+            category=category,
+            user=current_user,
+        )
+
+        db.session.add(new_item)
+        db.session.commit()
+        flash('New item successfully created!')
+        return redirect(url_for('index'))
+
+    else:
+        categories = db.session.query(Category).all()
+        return render_template(
+            "additem.html",
+            categories=categories
+        )
 
 
 # edit catalog item
@@ -143,7 +144,7 @@ def editItem(category_id, item_id):
 )
 @login_required
 def deleteItem(category_id, item_id):
-    return "TODO"
+    return render_template("deleteitem.html")
 
 
 # hook up extensions to app

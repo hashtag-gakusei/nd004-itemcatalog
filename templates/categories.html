@@ -50,6 +50,9 @@
         <div class="sphinx-bulma column content" style="margin-left: 0.5rem; padding-left: 0.5rem; padding-top: 2rem;">
 
             <div class="section" id="indices-and-tables">
+                {% if current_user.is_authenticated %}
+                <a class="has-text-danger" href="{{ url_for('newItem') }}">Add item</a>
+                {% endif %}
                 <h1>
                     {% if category %}
                         {{ category.category_name }}

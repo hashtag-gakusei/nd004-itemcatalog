@@ -48,7 +48,6 @@ def github_logged_in(blueprint, token):
 
     else:
         # Create a new local user account for this user
-        print info
         user = User(name=info["login"], email=info["email"])
         # Associate the new local user account with the OAuth token
         oauth.user = user

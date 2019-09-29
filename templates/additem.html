@@ -51,12 +51,24 @@
 
             <div class="section" id="indices-and-tables">
                 <h1>
-                    {{ item.item_name}}
+                    Delete item
                 </h1>
-                <p>{{ item.item_desc }}</p>
-                {% if current_user.is_authenticated and current_user.id == item.user_id %}
-                <a class="has-text-danger" href="{{ url_for('editItem', category_id=category.id, item_id=item.id) }}">Edit</a> | <a class="has-text-danger" href="{{ url_for('deleteItem', category_id=category.id, item_id=item.id) }}">Delete</a>
-                {% endif %}
+                <p>Are you sure you want to delete?</p>
+                <form method="post" action="/category/item/new" id="itemform">
+                    Title:<br>
+                    <input type="text" name="item_name">
+                    <br>
+                    Description:<br>
+                    <input type="text" name="item_desc">
+                    <br>
+                    Category:
+                    <select name="category" form="itemform">
+                        {% for category in categories %}
+                            <option value="{{ category.id }}">{{ category.category_name }}</option>
+                        {% endfor %}
+                    </select>
+                    <input type="submit" name="Submit">
+                </form>
             </div>
 
 

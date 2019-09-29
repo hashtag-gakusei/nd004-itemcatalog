@@ -37,3 +37,9 @@ The application provides the following json endpoints:
 ....
 10. Run this application with the command `python project.py`
 11. Check the application by pointing your browser to 'http://localhost:5000'
+
+
+## Known issues
+
+* duplicate items are allowed by design. (a simple check in the db with a flash message would fix this)
+* the project requirements do not ask for the ability to add, edit or delete a cateogory so these features must be done via the database.
