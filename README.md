@@ -34,7 +34,7 @@ The application provides the following json endpoints:
 8. Clone this repository inside that directory
 9. Install the python modules needed by running `sudo pip install -r requirements.txt`
 10. Setup the database by running `python project.py --setup`
-11 Setup the .env file or use mine
+11. Setup the .env file or use mine
 12. Run this application with the command `python project.py`
 13. Check the application by pointing your browser to 'http://localhost:5000'
 
