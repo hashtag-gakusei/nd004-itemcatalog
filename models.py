@@ -24,15 +24,33 @@ class Category(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
     user = db.relationship(User)
 
+    @property
+    def serialize(self):
+        return {
+            'id': self.id,
+            'category_name': self.category_name,
+            'user_id': self.user_id
+        }
+
 
 class Item(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     item_name = db.Column(db.String(100), nullable=False)
     item_desc = db.Column(db.String(256))
-    cat_id = db.Column(db.Integer, db.ForeignKey("category.id"))
+    category_id = db.Column(db.Integer, db.ForeignKey("category.id"))
     category = db.relationship(Category)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
     user = db.relationship(User)
+
+    @property
+    def serialize(self):
+        return {
+            'id': self.id,
+            'item_name': self.item_name,
+            'item_desc': self.item_desc,
+            'user_id': self.user_id,
+            'category_id': self.category_id
+        }
 
 
 # setup login manager
