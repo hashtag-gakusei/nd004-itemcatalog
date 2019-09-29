@@ -14,6 +14,14 @@ You will develop an application that provides a list of items within a variety o
 
 Vagrant and VirtualBox are used to spin up an Ubuntu virtual machine containing Python 2.7.12 and PostgreSQL 9.5.19.
 
+## JSON endpoints
+
+The application provides the following json endpoints:
+* http://localhost:5000/category/JSON - to list all categories
+* http://localhost:5000/category/1/item/JSON - to list all items in a category
+* http://localhost:5000/category/1/item/1/JSON - to list a specific item
+* http://localhost:5000/catalog.json - to provide a list of all items in all categories
+
 ## How to run the project
 
 1. Install VirtualBox from https://virtualbox.org

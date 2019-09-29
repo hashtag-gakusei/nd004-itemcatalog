@@ -28,6 +28,12 @@ def logout():
 
 
 # JSON SIDE
+@app.route('/catalog.json')
+def catalogJson():
+    items = db.session.query(Item).order_by(Item.id.desc())
+    return jsonify(catalog=[i.serialize for i in items])
+
+
 @app.route('/category/<int:category_id>/item/JSON')
 def categoryItemJSON(category_id):
     category = db.session.query(Category).filter_by(id=category_id).one()
