@@ -4,9 +4,8 @@ import sys
 from flask import Flask, redirect, url_for, flash, render_template
 from flask_login import login_required, logout_user
 from config import Config
-from models import db, login_manager
+from models import db, login_manager, User, Category, Item
 from oauth import blueprint
-from cli import create_db
 
 # Disable https check for OAuth 2 since we are on dev environment
 import os
@@ -16,7 +15,6 @@ os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
 app = Flask(__name__)
 app.config.from_object(Config)
 app.register_blueprint(blueprint, url_prefix="/login")
-app.cli.add_command(create_db)
 db.init_app(app)
 login_manager.init_app(app)
 
@@ -44,6 +42,26 @@ if __name__ == '__main__':
             db.create_all()
             db.session.commit()
             print("Database tables created")
+
+            user = User(
+                name="user1",
+                email="user1@ploodle.com",
+            )
+
+            category = Category(
+                category_name="Adventure games",
+                user=user,
+            )
+
+            item = Item(
+                item_name="Assasin's Creed",
+                item_desc="Assassin's Creed is an adventure stealth video game.",
+                category=category,
+                user=user,
+            )
+
+            db.session.add_all([user, category, item])
+            db.session.commit()
     else:
         app.debug = True
         app.run(host='0.0.0.0', port=5000)
