@@ -27,9 +27,37 @@ def logout():
     return redirect(url_for("index"))
 
 
+# show all categories
 @app.route("/")
+@app.route("/category/")
 def index():
-    return render_template("home.html")
+    return render_template("categories.html")
+
+# create new category
+@app.route("/category/new", methods=['GET', 'POST'])
+@login_required
+    return "TODO"
+
+
+# edit a category
+@app.route("/category/<int:category_id>/edit", methods=['GET', 'POST'])
+@login_required
+    return "TODO"
+
+
+# edit a category
+@app.route("/category/<int:category_id>/delete", methods=['GET', 'POST'])
+@login_required
+    return "TODO"
+
+
+# show items in a category
+
+
+# create new item in category
+
+
+#
 
 
 # hook up extensions to app
