@@ -41,5 +41,6 @@ The application provides the following json endpoints:
 
 ## Known issues
 
+* flashes were not implemented for actions on all pages
 * duplicate items are allowed by design. (a simple check in the db with a flash message would fix this)
 * the project requirements do not ask for the ability to add, edit or delete a cateogory so these features must be done via the database.

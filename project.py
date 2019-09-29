@@ -144,7 +144,21 @@ def editItem(category_id, item_id):
 )
 @login_required
 def deleteItem(category_id, item_id):
-    return render_template("deleteitem.html")
+    category = db.session.query(Category).filter_by(id=category_id).one()
+    categories = db.session.query(Category).all()
+    item = db.session.query(Item).filter_by(id=item_id).one()
+    if request.method == "POST" and current_user.id == item.user_id:
+        db.session.delete(item)
+        db.session.commit()
+        flash("Item deleted")
+        return redirect(url_for('index'))
+    else:
+        return render_template(
+            "deleteitem.html",
+            item=item,
+            category=category,
+            categories=categories
+        )
 
 
 # hook up extensions to app
