@@ -34,7 +34,8 @@ The application provides the following json endpoints:
 8. Clone this repository inside that directory
 9. Install the python modules needed by running `sudo pip install -r requirements.txt`
 10. Setup the database by running `python project.py --setup`
-11. Setup the .env file or use mine
+11. Source the .env file or run `export GITHUB_OAUTH_CLIENT_ID=ff58f642022a20c8c7c1; export GITHUB_OAUTH_CLIENT_SECRET=8be86f808fb1234777f5c0152807e479848661b9`
+
 12. Run this application with the command `python project.py`
 13. Check the application by pointing your browser to 'http://localhost:5000'
 
