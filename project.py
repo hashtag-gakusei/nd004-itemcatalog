@@ -136,7 +136,7 @@ def newItem():
 def editItem(category_id, item_id):
     categories = db.session.query(Category).all()
     item = db.session.query(Item).filter_by(id=item_id).one()
-    if request.method == 'POST':
+    if request.method == 'POST' and current_user.id == item.user_id:
         if request.form['item_name']:
             item.item_name = request.form['item_name']
         if request.form['item_desc']:

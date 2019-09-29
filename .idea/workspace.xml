@@ -8,7 +8,9 @@
       <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../crud/project.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../project_log_analysis/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.py" beforeDir="false" afterPath="$PROJECT_DIR$/project.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/additem.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/additem.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/edititem.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/edititem.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../forum/forumdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/../forum/forumdb.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/project.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="101">
+              <caret line="138" column="67" selection-start-line="138" selection-start-column="67" selection-end-line="138" selection-end-column="67" />
               <folding>
                 <element signature="e#23#33#0" expanded="true" />
               </folding>
@@ -31,14 +33,32 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="322">
-                <caret line="36" column="3" selection-start-line="36" selection-start-column="3" selection-end-line="36" selection-end-column="3" />
+              <first_editor relative-caret-position="37">
+                <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
               </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/edititem.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="227">
+              <caret line="60" column="93" selection-start-line="60" selection-start-column="93" selection-end-line="60" selection-end-column="93" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/additem.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="61" column="24" lean-forward="true" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -79,19 +99,19 @@
         <option value="$PROJECT_DIR$/templates/itemdescription.html" />
         <option value="$PROJECT_DIR$/templates/categories.html" />
         <option value="$PROJECT_DIR$/templates/deleteitem.html" />
-        <option value="$PROJECT_DIR$/templates/additem.html" />
-        <option value="$PROJECT_DIR$/templates/edititem.html" />
-        <option value="$PROJECT_DIR$/project.py" />
         <option value="$PROJECT_DIR$/config.py" />
         <option value="$PROJECT_DIR$/oauth.py" />
         <option value="$PROJECT_DIR$/models.py" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/templates/additem.html" />
+        <option value="$PROJECT_DIR$/templates/edititem.html" />
+        <option value="$PROJECT_DIR$/project.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="507" />
-    <option name="y" value="-1032" />
+    <option name="x" value="420" />
+    <option name="y" value="23" />
     <option name="width" value="1260" />
     <option name="height" value="718" />
   </component>
@@ -170,18 +190,18 @@
       <option name="presentableId" value="Default" />
       <updated>1569582950039</updated>
       <workItem from="1569582963783" duration="673000" />
-      <workItem from="1569750343588" duration="13920000" />
+      <workItem from="1569750343588" duration="14269000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18412000" />
+    <option name="totallyTimeSpent" value="18761000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="507" y="-1032" width="1260" height="718" extended-state="0" />
+    <frame x="420" y="23" width="1260" height="718" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2536946" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2536946" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -195,7 +215,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3290735" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3290735" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -293,20 +313,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/additem.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="62" column="29" lean-forward="true" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/edititem.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="68" column="99" lean-forward="true" selection-start-line="68" selection-start-column="99" selection-end-line="68" selection-end-column="99" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -344,23 +350,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="e#23#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="322">
-            <caret line="36" column="3" selection-start-line="36" selection-start-column="3" selection-end-line="36" selection-end-column="3" />
+          <first_editor relative-caret-position="37">
+            <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/additem.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="61" column="24" lean-forward="true" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/edititem.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="60" column="93" selection-start-line="60" selection-start-column="93" selection-end-line="60" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="138" column="67" selection-start-line="138" selection-start-column="67" selection-end-line="138" selection-end-column="67" />
+          <folding>
+            <element signature="e#23#33#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

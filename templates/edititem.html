@@ -55,10 +55,10 @@
                 </h1>
                 <form method="post" id="itemform">
                     Title:<br>
-                    <input type="text" name="item_name" value="{{ item.item_name }}" >
+                    <input type="text" name="item_name" value="{{ item.item_name }}" required>
                     <br>
                     Description:<br>
-                    <input type="text" name="item_desc" value="{{ item.item_desc }}">
+                    <input type="text" name="item_desc" value="{{ item.item_desc }}" required>
                     <br>
                     Category:
                     <select name="category" form="itemform">
