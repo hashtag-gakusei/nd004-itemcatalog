@@ -25,6 +25,7 @@ Vagrant and VirtualBox are used to spin up an Ubuntu virtual machine containing 
 7. Run `cd /vagrant`
 8. Clone this repository inside that directory
 9. Install the python modules needed by running `sudo pip install -r requirements.txt`
+10. Setup the database by running `python project.py --setup`
 ....
 10. Run this application with the command `python project.py`
 11. Check the application by pointing your browser to 'http://localhost:5000'

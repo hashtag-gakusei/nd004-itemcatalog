@@ -9,11 +9,29 @@ db = SQLAlchemy()
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(256), unique=True)
+    email = db.Column(db.String(256), nullable=False)
 
 
 class OAuth(OAuthConsumerMixin, db.Model):
     provider_user_id = db.Column(db.String(256), unique=True, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey(User.id), nullable=False)
+    user = db.relationship(User)
+
+
+class Category(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    category_name = db.Column(db.String(100), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
+    user = db.relationship(User)
+
+
+class Item(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    item_name = db.Column(db.String(100), nullable=False)
+    item_desc = db.Column(db.String(256))
+    cat_id = db.Column(db.Integer, db.ForeignKey("category.id"))
+    category = db.relationship(Category)
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
     user = db.relationship(User)
 
 
