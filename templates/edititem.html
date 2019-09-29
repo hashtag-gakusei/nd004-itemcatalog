@@ -51,19 +51,23 @@
 
             <div class="section" id="indices-and-tables">
                 <h1>
-                    Add item
+                    Edit item
                 </h1>
-                <form method="post" action="/category/item/new" id="itemform">
+                <form method="post" id="itemform">
                     Title:<br>
-                    <input type="text" name="item_name">
+                    <input type="text" name="item_name" value="{{ item.item_name }}" >
                     <br>
                     Description:<br>
-                    <input type="text" name="item_desc">
+                    <input type="text" name="item_desc" value="{{ item.item_desc }}">
                     <br>
                     Category:
                     <select name="category" form="itemform">
                         {% for category in categories %}
+                            {% if category.id == item.category_id %}
+                            <option selected value="{{ category.id }}">{{ category.category_name }}</option>
+                            {% else %}
                             <option value="{{ category.id }}">{{ category.category_name }}</option>
+                            {% endif %}
                         {% endfor %}
                     </select>
                     <input type="submit" name="Submit">

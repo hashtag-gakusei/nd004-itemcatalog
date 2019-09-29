@@ -134,7 +134,31 @@ def newItem():
 )
 @login_required
 def editItem(category_id, item_id):
-    return "TODO"
+    categories = db.session.query(Category).all()
+    item = db.session.query(Item).filter_by(id=item_id).one()
+    if request.method == 'POST':
+        if request.form['item_name']:
+            item.item_name = request.form['item_name']
+        if request.form['item_desc']:
+            item.item_desc = request.form['item_desc']
+        if request.form['category']:
+            item.category_id = request.form['category']
+        db.session.add(item)
+        db.session.commit()
+        flash('Item updated!')
+        return redirect(
+            url_for(
+                'editItem',
+                category_id=item.category_id,
+                item_id=item.id
+            )
+        )
+    else:
+        return render_template(
+            "edititem.html",
+            categories=categories,
+            item=item
+        )
 
 
 # delete catalog item

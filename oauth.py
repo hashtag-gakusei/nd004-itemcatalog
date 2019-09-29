@@ -1,3 +1,4 @@
+#!/usr/bin/env python2
 from flask import flash
 from flask_login import current_user, login_user
 from flask_dance.contrib.github import make_github_blueprint

@@ -1,3 +1,4 @@
+#!/usr/bin/env python2
 import os
 from dotenv import load_dotenv
 load_dotenv()
