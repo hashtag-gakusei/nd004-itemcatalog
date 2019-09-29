@@ -1,0 +1,30 @@
+# Udacity Fullstack Developer -Item catalog project
+
+This is the last project in the Full Stack Web Developer nanodegree
+
+## Overview
+
+You will develop an application that provides a list of items within a variety of categories as well as provide a user registration and authentication system. Registered users will have the ability to post, edit and delete their own items.
+
+## Software requirements
+
+* [Python](https://www.python.org/downloads/release/python-2712/) - The code uses ver 2.7.12 or greater\
+* [Vagrant](https://www.vagrantup.com/) - A virtual environment builder and manager\
+* [VirtualBox](https://www.virtualbox.org/) - An open source virtualiztion product.\
+
+Vagrant and VirtualBox are used to spin up an Ubuntu virtual machine containing Python 2.7.12 and PostgreSQL 9.5.19.
+
+## How to run the project
+
+1. Install VirtualBox from https://virtualbox.org
+2. Install Vagrant from https://vagrantup.com
+3. Install git-scm if you are using Windows environment
+4. Clone the following git repo: https://github.com/udacity/fullstack-nanodegree-vm.
+5. Open a terminal and go to the vagrant directory and run the command `vagrant up`
+6. When the installation is done run `vagrant ssh` command to enter the vm.
+7. Run `cd /vagrant`
+8. Clone this repository inside that directory
+9. Install the python modules needed by running `sudo pip install -r requirements.txt`
+....
+10. Run this application with the command `python project.py`
+11. Check the application by pointing your browser to 'http://localhost:5000'
