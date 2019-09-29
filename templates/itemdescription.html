@@ -51,23 +51,9 @@
 
             <div class="section" id="indices-and-tables">
                 <h1>
-                    {% if category %}
-                        {{ category.category_name }}
-                    {% else %}
-                        Latest items
-                    {% endif %}
+                    {{ item.item_name}}
                 </h1>
-                <ul class="simple">
-                    {% for item in items %}
-                    <li>
-                        <a class="reference internal" href="{{ url_for('showItemDescription', category_id=item.category_id, item_id=item.id) }}">
-                            <span class="std std-ref">{{ item.item_name }}</span>
-                        </a>
-                        <i>({{ item.item_name }})</i>
-
-                    </li>
-                   {% endfor %}
-                </ul>
+                <p>{{ item.item_desc }}</p>
             </div>
 
 

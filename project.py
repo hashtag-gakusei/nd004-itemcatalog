@@ -53,7 +53,13 @@ def categoriesJSON():
 @app.route("/")
 @app.route("/category/")
 def index():
-    return render_template("categories.html")
+    categories = db.session.query(Category).all()
+    items = db.session.query(Item).all()
+    return render_template(
+        "categories.html",
+        categories=categories,
+        items=items
+    )
 
 # create new category
 @app.route("/category/new", methods=['GET', 'POST'])
@@ -77,12 +83,35 @@ def deleteCategory(category_id):
 
 
 # show items in a category
-@app.route("/category/<int:category_id>/", methods=['GET', 'POST'])
-@app.route("/category/<int:category_id>/item", methods=['GET', 'POST'])
-@app.route("/category/<int:category_id>/item/", methods=['GET', 'POST'])
-@login_required
+@app.route("/category/<int:category_id>/")
+@app.route("/category/<int:category_id>/item")
+@app.route("/category/<int:category_id>/item/")
 def showItem(category_id):
-    return "TODO"
+    categories = db.session.query(Category).all()
+    current_category = db.session.query(Category)\
+        .filter_by(id=category_id).one()
+    items = db.session.query(Item).filter_by(category_id=category_id).all()
+    return render_template(
+        "categories.html",
+        categories=categories,
+        items=items,
+        category=current_category
+    )
+
+# show item description
+@app.route("/category/<int:category_id>/item/<int:item_id>")
+@app.route("/category/<int:category_id>/item/<int:item_id>/")
+def showItemDescription(category_id, item_id):
+    categories = db.session.query(Category).all()
+    item = db.session.query(Item).filter_by(id=item_id).one()
+    current_category = db.session.query(Category)\
+        .filter_by(id=category_id).one()
+    return render_template(
+        "itemdescription.html",
+        item=item,
+        categories=categories,
+        category=current_category
+    )
 
 # create new item in category
 @app.route("/category/<int:category_id>/item/new", methods=['GET', 'POST'])
@@ -90,17 +119,26 @@ def showItem(category_id):
 def newItem(category_id):
     return "TODO"
 
+
 # edit catalog item
-@app.route("/category/<int:category_id>/item/<int:item_id>/edit", methods=['GET', 'POST'])
+@app.route(
+    "/category/<int:category_id>/item/<int:item_id>/edit",
+    methods=['GET', 'POST']
+)
 @login_required
 def editItem(category_id, item_id):
     return "TODO"
 
+
 # delete catalog item
-@app.route("/category/<int:category_id>/item/<int:item_id>/delete", methods=['GET', 'POST'])
+@app.route(
+    "/category/<int:category_id>/item/<int:item_id>/delete",
+    methods=['GET', 'POST']
+)
 @login_required
 def deleteItem(category_id, item_id):
     return "TODO"
+
 
 # hook up extensions to app
 db.init_app(app)
@@ -125,12 +163,46 @@ if __name__ == '__main__':
 
             item = Item(
                 item_name="Assasin's Creed",
-                item_desc="Assassin's Creed is an adventure stealth video game.",
+                item_desc="AC is an adventure stealth video game.",
                 category=category,
                 user=user,
             )
 
-            db.session.add_all([user, category, item])
+            item2 = Item(
+                item_name="Legend of Zelda",
+                item_desc="I actually haven't played this game yet...",
+                category=category,
+                user=user,
+            )
+
+            db.session.add_all([user, category, item, item2])
+            db.session.commit()
+
+            user = User(
+                name="user2",
+                email="user2@ploodle.com",
+            )
+
+            category = Category(
+                category_name="Action games",
+                user=user,
+            )
+
+            item = Item(
+                item_name="God of War",
+                item_desc="Kratos rules!!!!",
+                category=category,
+                user=user,
+            )
+
+            item2 = Item(
+                item_name="Matrix",
+                item_desc="Will you take the blue pill?",
+                category=category,
+                user=user,
+            )
+
+            db.session.add_all([user, category, item, item2])
             db.session.commit()
     else:
         app.debug = True
